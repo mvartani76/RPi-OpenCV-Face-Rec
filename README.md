@@ -52,7 +52,7 @@ add_executable( displayimage display_image.cpp )
 link_directories( /home/pi/pierre/libfacerec-0.04 )
 target_link_libraries( displayimage /home/pi/pierre/libfacerec-0.04/libopencv_facerec.a ${OpenCV_LIBS} )
 
-home/pi/pierre/libracerec-0.04 is replaced with home/pi/facereclib
+<i>home/pi/pierre/libracerec-0.04</i> is replaced with <i>home/pi/facereclib</i>
 
 <b> Data Files</b>
 
@@ -62,4 +62,4 @@ Note that these files all have to be the same size and have the eyes aligned whi
 <b> Python Scripts<b>
 
 <i>create_csv.py</i> - This script will create the .csv (or text) file for using as input to the face recognition software.<br>
-<i>align_images.py</i> - This script makes converts the files to a specified size and aligns the eyes. The user inputs the left and right eye locations, the cropping, and overall size of the file.<br>
+<i>align_images.py</i> - This script converts the files to a specified size and aligns the eyes. The user inputs the left and right eye locations, the cropping, and overall size of the file.<br>
