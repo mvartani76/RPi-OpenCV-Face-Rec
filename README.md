@@ -23,7 +23,7 @@ Today (April, 2013), only OpenCV 2.3 is available for RPI. Unfortunatly, face re
 
 <b> 2.1 Install OpenCV 2.3 </b>
 
-Install both dev lib and python lib. My soft is C-written. Anyway, Python is still usefull for small scripts. I recommend to install it.
+Install both dev lib and python lib. The software is written in C but Python is still useful for small scripts. I recommend to install it.
 
 sudo apt-get update<br>
 sudo apt-get install libopencv-dev<br>
@@ -37,10 +37,10 @@ Download the zip file here. https://github.com/bytefish/libfacerec/zipball/v0.04
 
 I unzip it on my mac and transfer the whole directory on my rpi.
 
-Go on the directory and just compile it using
+Go to the directory and compile it using
 
-cmake .
-make
+cmake .<br>
+make<br>
 
 Now, if you want to compile your previous sample with this libfacerec-004 api, you will need to modify your CMakeLists.txt file. It just link with the libface lib. Note :  Replace /home/pi/pierre/ path by the path where you copied the libface directory. In Mike's example, this is located in /home/pi/ so the library will be located at /home/pi/facereclib.
 
