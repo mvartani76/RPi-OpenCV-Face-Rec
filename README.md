@@ -54,18 +54,54 @@ Now, if you want to compile your previous sample with this libfacerec-004 api, y
 <br>Note : Replace <b>/home/pi/pierre/</b> path by the path where you copied the libface directory. In Mike's example, this is located in /home/pi/ so the library will be located at /home/pi/facereclib.
 
 
-<u>Example from Pierre's blog</u> <br>
+Example from Pierre's blog <br>
 <pre class="code-text-only" style="display: none;">
 cmake_minimum_required(VERSION 2.8)
-project( reco )
+project( <b>camcv</b> )
+SET(COMPILE_DEFINITIONS -Werror)
+#OPENCV
 find_package( OpenCV REQUIRED )
-add_executable( displayimage display_image.cpp )
-link_directories( <b>/home/pi/pierre/libfacerec-0.04</b> )
-target_link_libraries( displayimage /home/pi/pierre/libfacerec-0.04/libopencv_facerec.a ${OpenCV_LIBS} )
+
+#except if you.re pierre, change the folder where you installed libfacerec
+#optional, only if you want to go till step 6 : face recognition
+link_directories( <b><i>/home/pi/pierre/libfacerec-0.04</i></b> ) 
+
+include_directories(/opt/vc/userland/host_applications/linux/libs/bcm_host/include)
+include_directories(/opt/vc/userland/interface/vcos)
+include_directories(/opt/vc/userland)
+include_directories(/opt/vc/userland/interface/vcos/pthreads)
+include_directories(/opt/vc/userland/interface/vmcs_host/linux)
+add_executable(<b>camcv</b> RaspiCamControl.c RaspiCLI.c RaspiPreview.c camcv.c)
+target_link_libraries(camcv /opt/vc/lib/libmmal_core.so /opt/vc/lib/libmmal_util.so /opt/vc/lib/libmmal_vc_client.so /opt/vc/lib/libvcos.so /opt/vc/lib/libbcm_host.so <b><i>/home/pi/pierre/libfacerec-0.04/libopencv_facerec.a</i></b> ${OpenCV_LIBS})
 </pre>
 <br>
 <i><b>home/pi/pierre/libracerec-0.04</b></i> is replaced with <i><b>home/pi/facereclib</b></i>
+<br>
+Example from Mike's code<br>
+<pre class="code-text-only" style="display: none;">
+cmake_minimum_required(VERSION 2.8)
+project( <b>camcv_vid1</b> )
 
+SET(COMPILE_DEFINITIONS -Werror)
+
+#OPENCV
+find_package( OpenCV REQUIRED )
+
+link_directories( <b><i>/home/pi/facereclib</i></b> )
+
+include_directories(/opt/vc/userland/host_applications/linux/libs/bmc_host/include)
+include_directories(/opt/vc/userland/interface/vcos)
+include_directories(/opt/vc/userland)
+include_directories(/opt/vc/userland/interface/vcos/pthreads)
+include_directories(/opt/vc/userland/interface/vmcs_host/linux)
+include_directories(/opt/vc/include)
+
+add_executable(<b>camcv_vid1</b> RaspiCamControl.c RaspiCLI.c RaspiPreview.c camcv_vid1.cpp)
+target_link_libraries(camcv_vid1 /opt/vc/lib/libmmal_core.so
+/opt/vc/lib/libmmal_util.so /opt/vc/lib/libmmal_vc_client.so
+/opt/vc/lib/libvcos.so /opt/vc/lib/libbcm_host.so <b><i>/home/pi/facereclib/libopencv_facerec.a</i></b> ${OpenCV_LIBS})
+</pre>
+<br>
 <b> Data Files</b>
 
 I have uploaded about 10 pictures of myself and 9 pictures of Joep from the internet as initial subjects. These are located in the /data/ folder.
@@ -73,7 +109,7 @@ Note that these files all have to be the same size and have the eyes aligned whi
 
 <b> Python Scripts<b>
 
-<i>create_csv.py</i> - This script will create the .csv (or text) file for using as input to the face recognition software.<br>
-<i>align_images.py</i> - This script converts the files to a specified size and aligns the eyes. The user inputs the left and right eye locations, the cropping, and overall size of the file.<br>
+<b><i>create_csv.py</i></b> - This script will create the .csv (or text) file for using as input to the face recognition software.<br>
+<b><i>align_images.py</i></b> - This script converts the files to a specified size and aligns the eyes. The user inputs the left and right eye locations, the cropping, and overall size of the file.<br>
 </body>
 </html>
