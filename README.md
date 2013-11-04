@@ -27,7 +27,7 @@ Today (April, 2013), only OpenCV 2.3 is available for RPI. Unfortunately, face r
 
 <b> 2.1 Install OpenCV 2.3 </b>
 
-Install both dev lib and python lib. The software is written in C but Python is still useful for small scripts. I recommend to install it.
+Install both dev lib and python lib. The software is written in C but Python is still useful for small scripts.
 
 <pre class="code-text-only" style="display: none;">
 sudo apt-get update
@@ -41,7 +41,7 @@ The face recognition API is called libfacerec-0.04. All information and doc can 
 
 Download the zip file here. https://github.com/bytefish/libfacerec/zipball/v0.04
 
-Unzip it locally on PC and transfer the whole directory to RPi.
+Unzip it locally on PC and transfer the whole directory to RPi location, <b><i>home/pi/facereclib</i></b>.
 
 Go to the directory and compile it using
 
