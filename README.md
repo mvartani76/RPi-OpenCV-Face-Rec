@@ -25,7 +25,7 @@ OpenCV is a wonderful library to do computer vision. Please take time to read in
 
 Today (April, 2013), only OpenCV 2.3 is available for RPI. Unfortunately, face reco API is only available on version 2.4. Thus, we will need to install OpenCV in two steps.
 
-<b> 2.1 Install OpenCV 2.3 </b>
+<b> 3. Install OpenCV 2.3 </b>
 
 Install both dev lib and python lib. The software is written in C but Python is still useful for small scripts.
 
@@ -35,7 +35,7 @@ sudo apt-get install libopencv-dev
 sudo apt-get install python-opencv
 </pre>
 
-<b> 3.2 install face recognition API</b>
+<b> 4. install face recognition API</b>
 
 The face recognition API is called libfacerec-0.04. All information and doc can be found on this excellent website.
 
@@ -111,5 +111,13 @@ Note that these files all have to be the same size and have the eyes aligned whi
 
 <b><i>create_csv.py</i></b> - This script will create the .csv (or text) file for using as input to the face recognition software.<br>
 <b><i>align_images.py</i></b> - This script converts the files to a specified size and aligns the eyes. The user inputs the left and right eye locations, the cropping, and overall size of the file.<br>
+
+
+<b> 5. Run the Code<br>
+
+Make sure you are in the directory with the <b>camcv_vid1</b> executable and initiate the following command<br>
+<pre class="code-text-only" style="display: none;">
+<code>./camcv_vid1 facrecdata.csv 1 5500</code></pre>
+
 </body>
 </html>
