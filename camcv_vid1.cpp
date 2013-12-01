@@ -65,8 +65,8 @@ using namespace std;
 #define MAX_PEOPLE 		4
 #define P_MIKE			0
 #define P_JOEP			1
-#define P_LISA			3
-#define P_MONA			2
+#define P_WILL			2
+#define P_MONA			3
 
 // for debug and trace
 #define TRACE 1
@@ -318,10 +318,10 @@ static void video_buffer_callback(MMAL_PORT_T *port, MMAL_BUFFER_HEADER_T *buffe
 		int prediction				= -1;
 		model.predict(face_resized,prediction,predicted_confidence);
 		
-		// create a rectangle around the face      
+		// create a rectangle around the face
 		rectangle(gray, face_i, CV_RGB(255, 255 ,255), 1);
 			
-		// if good prediction : > threshold 
+		// if good prediction : > threshold
 		if (predicted_confidence>PREDICTION_SEUIL)
 		{
 		// trace
@@ -660,8 +660,8 @@ int main(int argc, const char **argv)
 	// life is hard.
 	people[P_MIKE] 		= "Mike";
 	people[P_JOEP] 		= "Joep";
-	people[P_MONA] 		= "Mona Lisa";
-	people[P_LISA]		= "Lisa";
+	people[P_WILL] 		= "Will";
+	people[P_MONA]		= "Mona Lisa";
 	
 	// init...
 	// reset counter

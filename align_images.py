@@ -82,8 +82,8 @@ def CropFace(image, eye_left=(0,0), eye_right=(0,0), offset_pct=(0.2,0.2), dest_
   return image
 
 if __name__ == "__main__":
-  image =  Image.open("./data/joep/joep_09.jpg")
+  image =  Image.open("./data/will/will_07.jpg")
   #CropFace(image, eye_left=(1991,1854), eye_right=(2651,1832), offset_pct=(0.1,0.1), dest_sz=(200,200)).save("./data/mikev/mike_01_10_10_200_200.jpg")
-  CropFace(image, eye_left=(273,120), eye_right=(310,131), offset_pct=(0.2,0.2), dest_sz=(200,200)).save("./data/joep/joep_09_20_20_200_200.jpg")
+  CropFace(image, eye_left=(235,33), eye_right=(250,32), offset_pct=(0.2,0.2), dest_sz=(200,200)).save("./data/will/will_07_20_20_200_200.jpg")
   #CropFace(image, eye_left=(1991,1854), eye_right=(2651,1832), offset_pct=(0.3,0.3), dest_sz=(200,200)).save("./data/mikev/mike_01_30_30_200_200.jpg")
   #CropFace(image, eye_left=(1991,1854), eye_right=(2651,1832), offset_pct=(0.2,0.2)).save("./data/mikev/mike_01_20_20_70_70.jpg")
