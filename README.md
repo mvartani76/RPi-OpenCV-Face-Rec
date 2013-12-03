@@ -112,6 +112,15 @@ Note that these files all have to be the same size and have the eyes aligned whi
 <b><i>create_csv.py</i></b> - This script will create the .csv (or text) file for using as input to the face recognition software.<br>
 <b><i>align_images.py</i></b> - This script converts the files to a specified size and aligns the eyes. The user inputs the left and right eye locations, the cropping, and overall size of the file.<br>
 
+<br>Note that main in align_images.py needs to be currently updated for the correct input file and file parameters as shown below for an example file (<b>will_07.jpg</b>) 
+
+<pre class="code-text-only" style="display: none;">
+<code>
+if __name__ == "__main__":
+  image =  Image.open("./data/will/will_07.jpg")
+  
+  CropFace(image, eye_left=(235,33), eye_right=(250,32), offset_pct=(0.2,0.2), dest_sz=(200,200)).save("./data/will/will_07_20_20_200_200.jpg")
+</code></pre>
 
 <b> 5. Run the Code<br>
 
